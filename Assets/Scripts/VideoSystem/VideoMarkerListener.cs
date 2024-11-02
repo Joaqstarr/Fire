@@ -28,7 +28,7 @@ namespace VideoSystem
 
         public void SendEvent(VideoMarkerData data)
         {
-            VideoEvent eventToSend = _eventsArray[1];
+            VideoEvent eventToSend = _eventsArray[(int)data.EventType];
 
             eventToSend?.Invoke(data);
         }

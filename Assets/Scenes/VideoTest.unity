@@ -132,8 +132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 528044321}
   - component: {fileID: 528044320}
-  - component: {fileID: 528044319}
   - component: {fileID: 528044318}
+  - component: {fileID: 528044322}
+  - component: {fileID: 528044323}
   m_Layer: 0
   m_Name: Video
   m_TagString: Untagged
@@ -153,22 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4104c07842ad23f4cb77a4fe62c7adab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!111 &528044319
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528044317}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d430af4a142b17444ae9d97bce18c190, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 3589e99df6a639440afce1e70bd8fdf9, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!328 &528044320
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -176,21 +161,21 @@ VideoPlayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528044317}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_Enabled: 0
+  m_VideoClip: {fileID: 32900000, guid: d09b8d45f66760c4a849051b3a1082b3, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
+  m_TargetCamera: {fileID: 1980963192}
   m_TargetTexture: {fileID: 0}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_AspectRatio: 2
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
@@ -201,8 +186,8 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!4 &528044321
@@ -220,6 +205,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &528044322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528044317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4797c7a1d489b884981a55de2931443d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &528044323
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528044317}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f0a3bb35a401a64489c0dd840806c1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1544072899
 GameObject:
   m_ObjectHideFlags: 0
