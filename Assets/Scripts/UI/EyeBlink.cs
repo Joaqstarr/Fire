@@ -9,6 +9,16 @@ public class EyeBlink : MonoBehaviour
 
     public static EyeDel OnEyeTransition;
 
+    private Animator _anim;
+    private void Start()
+    {
+        _anim = GetComponent<Animator>();
+    }
+
+    public void BlinkEye()
+    {
+        _anim.SetTrigger("Blink");
+    }
 
     public void TransitionEye()
     {
