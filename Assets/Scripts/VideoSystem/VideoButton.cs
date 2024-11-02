@@ -20,6 +20,7 @@ public class VideoButton : MonoBehaviour
         if (other.gameObject.CompareTag("Cursor") && other.transform.root == transform.root)
         {
             _hovered = true;
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
     
@@ -28,13 +29,19 @@ public class VideoButton : MonoBehaviour
         if (other.gameObject.CompareTag("Cursor") && other.transform.root == transform.root)
         {
             _hovered = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
     private void Update()
     {
         if(_hovered && Input.GetMouseButtonDown(0))
+        {
             Destroy(gameObject);
+        }
+           
+        
+   
 
     }
     
