@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VideoSystem;
+using UnityEngine.Events;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Range(1f, 300f)]
     [SerializeField] private float _timeAddedPerLog;
     [SerializeField] private EyeBlink _eyeBlink;
+    [SerializeField] private VideoBehavior _mainMinigameBehavior;
 
     private int _amountOfLogs = 0;
     private float _fireTime = 0;
@@ -30,13 +34,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _mainMinigameBehavior.GetComponent<VideoMarkerListener>().Subscribe(VideoEventTypes.EndVideo, EndMainMinigame);
     }
 
     // Update is called once per frame
     void Update()
     {
         _fireTime = Mathf.Max(0, _fireTime - Time.deltaTime);
+        UnityEngine.Cursor.visible = false;
 
     }
 
@@ -55,7 +60,15 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    public void EnterMinigame()
+    public void PickUpSticksGame()
+    {
+        EnterMinigame("PickUpSticks", () =>
+        {
+            AddLogs(3);
+        });
+    }
+
+    public void EnterMinigame(string name, Action onTransition)
     {
         _state = GameState.Minigame;
 
@@ -66,6 +79,9 @@ public class GameManager : MonoBehaviour
         {
             EyeBlink.OnEyeTransition -= BlinkTransition;
             DisableMainScreen();
+
+            _mainMinigameBehavior.PlayVideo(name);
+            onTransition();
         }
     }
 
@@ -75,4 +91,27 @@ public class GameManager : MonoBehaviour
         _mainScreenGroup.blocksRaycasts = false;
         _mainScreenGroup.interactable = false;
     }
+
+    private void EnableMainScreen()
+    {
+        _mainScreenGroup.alpha = 1;
+        _mainScreenGroup.blocksRaycasts = true;
+        _mainScreenGroup.interactable = true;
+    }
+
+    private void EndMainMinigame(VideoMarkerData data)
+    {
+        _state = GameState.MainScreen;
+
+        EyeBlink.OnEyeTransition += BlinkTransition;
+        _eyeBlink.BlinkEye();
+
+        void BlinkTransition()
+        {
+            EyeBlink.OnEyeTransition -= BlinkTransition;
+            EnableMainScreen();
+        }
+        
+    }
 }
+

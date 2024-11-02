@@ -10,6 +10,7 @@ namespace VideoSystem
         Pause,
         AcceptInput,
         StopAcceptingInput,
+        EndVideo,
         Max
     }
 

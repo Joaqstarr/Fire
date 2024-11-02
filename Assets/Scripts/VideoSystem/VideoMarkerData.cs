@@ -11,6 +11,7 @@ namespace VideoSystem
         {
             public Vector2 Pos;
             public Vector2 Size;
+            public Sprite Image;
         }
         
         [field: SerializeField] public VideoEventTypes EventType { get; private set; }

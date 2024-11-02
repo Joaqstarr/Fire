@@ -13,6 +13,7 @@ public class Cursor : MonoBehaviour
     [SerializeField] private float _zPos = -1;
 
     [SerializeField] private Vector3 _targScale = Vector3.one;
+    [SerializeField] private bool _matchWithMousePos;
 
     private Rigidbody _rb;
 
@@ -25,11 +26,19 @@ public class Cursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 boundSize = _spriteRend.size;
-        Vector3 newCursorPos = (boundSize * GetMousePosition()) - (boundSize / 2);
-        newCursorPos.z = _zPos;
+        Vector3 setPos = Camera.main.ScreenToWorldPoint( Input.mousePosition);
+        setPos.z = _zPos;
+        if (!_matchWithMousePos)
+        {
+
+            Vector2 boundSize = _spriteRend.size;
+            Vector3 newCursorPos = (boundSize * GetMousePosition()) - (boundSize / 2);
+            newCursorPos.z = _zPos;
+            setPos = transform.parent.TransformPoint(newCursorPos);
+
+        }
         
-        _rb.MovePosition(transform.parent.TransformPoint(newCursorPos));
+        _rb.MovePosition(setPos);
 
 
         Vector3 parentScale = transform.parent.lossyScale;

@@ -51,3 +51,6 @@ TagManager:
   - name: SanityMinigames
     uniqueID: 3909391605
     locked: 0
+  - name: Blink
+    uniqueID: 2034564813
+    locked: 0

@@ -101,8 +101,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -385575691
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5cb2a3ec837c2464aa59a0e2eb56c2f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,7 +124,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4458881424444289737}
-  - component: {fileID: 867386445359454611}
   - component: {fileID: 7673599603627699474}
   - component: {fileID: 1881580748863031913}
   - component: {fileID: 4756949285303322436}
@@ -146,49 +145,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.21, y: -2.32, z: 0.6004429}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3399199037629796763}
   - {fileID: 3389076407230725562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!328 &867386445359454611
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5168309031720516481}
-  m_Enabled: 0
-  m_VideoClip: {fileID: 32900000, guid: d09b8d45f66760c4a849051b3a1082b3, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 1
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 0
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 0
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!114 &7673599603627699474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,8 +238,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -385575691
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 24308fe25be942148b5fcd99dd103d44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -385,9 +348,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b58f90d2ab11344975c855ed518f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverNum: 0
   _spriteRend: {fileID: 1356511659344510619}
   _zPos: -1
   _targScale: {x: 4, y: 4, z: 4}
+  _matchWithMousePos: 0
 --- !u!95 &2604527472269125429
 Animator:
   serializedVersion: 5

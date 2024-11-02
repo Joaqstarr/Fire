@@ -55,9 +55,9 @@ public class VideoBehavior : MonoBehaviour
 
     }
 
-    public void PlayVideo(VideoClip clip)
+    public void PlayVideo(string name)
     {
-        
+        _animationComponent.Play(name);
     }
 
 
@@ -86,6 +86,11 @@ public class VideoBehavior : MonoBehaviour
                 Vector3 scale = data.Buttons[i].Size;
                 scale.z = 3;
                 newButton.transform.localScale = scale;
+
+                if (data.Buttons[i].Image != null)
+                {
+                    newButton.SetSprite(data.Buttons[i].Image, true);
+                }
             }
         }
         
