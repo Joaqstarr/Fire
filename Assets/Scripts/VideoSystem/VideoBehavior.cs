@@ -17,13 +17,14 @@ public class VideoBehavior : MonoBehaviour
 
     [SerializeField] private VideoButton _buttonPrefab;
     [SerializeField] private ActionButtonInput _actionButtonPrefab;
+    [SerializeField] private string _playOnStart;
 
     private void Awake()
     {
         _player = GetComponent<VideoPlayer>();
         _videoMarkerListener = GetComponent<VideoMarkerListener>();
         _animationComponent = GetComponent<Animator>();
-        
+        PlayVideo(_playOnStart);
     }
 
 
@@ -57,6 +58,7 @@ public class VideoBehavior : MonoBehaviour
 
     public void PlayVideo(string name)
     {
+        if (name == null) return;
         _animationComponent.Play(name);
     }
 
