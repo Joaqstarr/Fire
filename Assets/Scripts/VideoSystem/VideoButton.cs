@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class VideoButton : MonoBehaviour
 {
+    int hoverNumber = 0;
+    SpriteRenderer spriteRenderer;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
@@ -13,14 +16,18 @@ public class VideoButton : MonoBehaviour
 
     private bool _hovered = false;
 
-
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Cursor") && other.transform.root == transform.root)
         {
             _hovered = true;
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            spriteRenderer.enabled = true;
+            other.GetComponent<Cursor>().hoverNum++;
         }
     }
     
@@ -29,7 +36,8 @@ public class VideoButton : MonoBehaviour
         if (other.gameObject.CompareTag("Cursor") && other.transform.root == transform.root)
         {
             _hovered = false;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            spriteRenderer.enabled = false;
+            other.GetComponent<Cursor>().hoverNum--;
         }
     }
 

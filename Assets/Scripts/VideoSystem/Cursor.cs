@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
+    public int hoverNum = 0;
+
+    Animator animator;
 
     [SerializeField] private SpriteRenderer _spriteRend;
     [SerializeField] private float _zPos = -1;
@@ -16,6 +19,7 @@ public class Cursor : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,8 +34,10 @@ public class Cursor : MonoBehaviour
 
         Vector3 parentScale = transform.parent.lossyScale;
         transform.localScale = new Vector3(_targScale.x/parentScale.x, _targScale.y/parentScale.y, _targScale.z/parentScale.z);
-        
 
+
+
+        animator.SetBool("hover", hoverNum != 0);
     }
 
     private Vector2 GetMousePosition()
