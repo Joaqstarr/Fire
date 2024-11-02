@@ -1,18 +1,56 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VideoMarkerListener : MonoBehaviour
+namespace VideoSystem
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum VideoEventTypes
     {
-        
+        Pause,
+        AcceptInput,
+        StopAcceptingInput,
+        Max
     }
 
-    // Update is called once per frame
-    void Update()
+    public class VideoMarkerListener : MonoBehaviour
     {
-        
+        public delegate void VideoEvent(VideoMarkerData data);
+
+
+        private VideoEvent[] _eventsArray;
+
+
+        private void Awake()
+        {
+            _eventsArray = new VideoEvent[(int)VideoEventTypes.Max];
+        }
+
+        public void SendEvent(VideoMarkerData data)
+        {
+            VideoEvent eventToSend = _eventsArray[1];
+
+            eventToSend?.Invoke(data);
+        }
+
+
+        public void Subscribe(VideoEventTypes type, VideoEvent method)
+        {
+            VideoEvent eventToSubTo = _eventsArray[(int)type];
+
+            eventToSubTo += method;
+
+            _eventsArray[(int)type] = eventToSubTo;
+        }
+
+        public void Unsubscribe(VideoEventTypes type, VideoEvent method)
+        {
+            VideoEvent eventToSubTo = _eventsArray[(int)type];
+
+            eventToSubTo -= method;
+
+            _eventsArray[(int)type] = eventToSubTo;
+        }
+
     }
 }
