@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: CampfireMinigames
+    uniqueID: 4163349659
+    locked: 0
+  - name: MainScreen
+    uniqueID: 3216141839
+    locked: 0
+  - name: SanityMinigames
+    uniqueID: 3909391605
+    locked: 0
