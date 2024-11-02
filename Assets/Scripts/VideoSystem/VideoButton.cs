@@ -7,7 +7,7 @@ public class VideoButton : MonoBehaviour
 {
     int hoverNumber = 0;
     SpriteRenderer spriteRenderer;
-
+    Cursor _cursor;
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
@@ -27,7 +27,11 @@ public class VideoButton : MonoBehaviour
         {
             _hovered = true;
             spriteRenderer.enabled = true;
-            other.GetComponent<Cursor>().hoverNum++;
+
+            if (_cursor == null)
+                _cursor = other.GetComponent<Cursor>();
+
+            _cursor.hoverNum++;
         }
     }
     
@@ -37,7 +41,16 @@ public class VideoButton : MonoBehaviour
         {
             _hovered = false;
             spriteRenderer.enabled = false;
-            other.GetComponent<Cursor>().hoverNum--;
+            _cursor.hoverNum--;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_hovered)
+        {
+            _hovered = false;
+            _cursor.hoverNum--;
         }
     }
 
@@ -52,5 +65,21 @@ public class VideoButton : MonoBehaviour
    
 
     }
-    
+
+
+    public void SetSprite(Sprite sprite, bool randomizeRot)
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        spriteRenderer.sprite = sprite;
+        spriteRenderer.color = Color.white;
+
+
+        if (randomizeRot)
+        {
+            Vector3 euler = transform.localEulerAngles;
+            euler.z += UnityEngine.Random.Range(-120, 120);
+            transform.localEulerAngles = euler;
+        }
+    }
 }
