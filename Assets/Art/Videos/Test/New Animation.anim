@@ -346,7 +346,7 @@ AnimationClip:
   - time: 2.5
     functionName: SendEvent
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 78e43f57d6f83a14981e3c87b70049f8, type: 2}
+    objectReferenceParameter: {fileID: 11400000, guid: d5b99bf95d4f01440acd5f2b163336dd, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

@@ -27,7 +27,7 @@ public class VideoBehavior : MonoBehaviour
     }
 
 
-    private void OnEnable()
+    private void Start()
     {
         _videoMarkerListener.Subscribe(VideoEventTypes.Pause, PauseVideo);
         _videoMarkerListener.Subscribe(VideoEventTypes.AcceptInput, StartAcceptingInput);
@@ -83,7 +83,9 @@ public class VideoBehavior : MonoBehaviour
             {
                 VideoButton newButton = Instantiate(_buttonPrefab, _buttonHolder);
                 newButton.transform.localPosition = data.Buttons[i].Pos;
-                newButton.transform.localScale = data.Buttons[i].Size;
+                Vector3 scale = data.Buttons[i].Size;
+                scale.z = 3;
+                newButton.transform.localScale = scale;
             }
         }
         

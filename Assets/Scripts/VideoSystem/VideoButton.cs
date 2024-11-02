@@ -8,12 +8,34 @@ public class VideoButton : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawCube(transform.position, transform.lossyScale);
+        Gizmos.DrawWireCube(transform.position, transform.lossyScale);
+    }
+
+    private bool _hovered = false;
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cursor") && other.transform.root == transform.root)
+        {
+            _hovered = true;
+        }
     }
     
-    public void OnMouseDown()
+    private void OnTriggerExit(Collider other)
     {
-        Destroy(gameObject);
-        
+        if (other.gameObject.CompareTag("Cursor") && other.transform.root == transform.root)
+        {
+            _hovered = false;
+        }
     }
+
+    private void Update()
+    {
+        if(_hovered && Input.GetMouseButtonDown(0))
+            Destroy(gameObject);
+
+    }
+    
 }

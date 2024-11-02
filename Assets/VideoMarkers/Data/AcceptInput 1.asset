@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: AcceptInput 1
   m_EditorClassIdentifier: 
   <EventType>k__BackingField: 1
-  <InputStyle>k__BackingField: 1
-  <Buttons>k__BackingField: []
+  <InputStyle>k__BackingField: 2
+  <Buttons>k__BackingField:
+  - Pos: {x: -0.22, y: -1.19}
+    Size: {x: 3.08, y: 4.61}
