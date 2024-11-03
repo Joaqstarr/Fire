@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1881580748863031913, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
+      propertyPath: _playOnStart
+      value: DoormatKey
+      objectReference: {fileID: 0}
     - target: {fileID: 4458881424444289737, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.21
