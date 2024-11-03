@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: DoorKey
   m_EditorClassIdentifier: 
   <EventType>k__BackingField: 0
-  <InputStyle>k__BackingField: 0
-  <Buttons>k__BackingField: []
+  <InputStyle>k__BackingField: 2
+  <Buttons>k__BackingField:
+  - Pos: {x: -0.53, y: -1.68}
+    Size: {x: 1.22, y: 1.14}
+    Image: {fileID: 0}
