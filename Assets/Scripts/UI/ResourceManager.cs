@@ -13,6 +13,8 @@ public class ResourceManager : MonoBehaviour
 
     [SerializeField]
     private CanvasGroup _canvasGroup;
+    [SerializeField]
+    private AudioSource _audioSource;
 
     public UnityEvent _onMaxed;
     // Start is called before the first frame update
@@ -26,11 +28,21 @@ public class ResourceManager : MonoBehaviour
         _amount = 0;
     }
 
+    public void ResetIfFire()
+    {
+        if (GameManager.Instance != null && GameManager.Instance.GetFireTime() > 0)
+        {
+            ResetToZero();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         _amount += Time.deltaTime;
-        _canvasGroup.alpha = _curve.Evaluate(_amount/_maxAmount);
+        float interp = _curve.Evaluate(_amount / _maxAmount);
+        if(_audioSource != null)
+            _audioSource.volume = interp;
+        _canvasGroup.alpha = interp;
 
         if(_amount >= _maxAmount)
         {
