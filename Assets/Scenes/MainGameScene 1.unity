@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 223012341}
   - component: {fileID: 223012343}
   - component: {fileID: 223012342}
+  - component: {fileID: 223012344}
   m_Layer: 5
   m_Name: stomach
   m_TagString: Untagged
@@ -423,6 +424,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223012340}
   m_CullTransparentMesh: 1
+--- !u!114 &223012344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223012340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &543860941
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +687,7 @@ GameObject:
   - component: {fileID: 699818231}
   - component: {fileID: 699818233}
   - component: {fileID: 699818232}
+  - component: {fileID: 699818234}
   m_Layer: 5
   m_Name: lungs
   m_TagString: Untagged
@@ -734,6 +752,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699818230}
   m_CullTransparentMesh: 1
+--- !u!114 &699818234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699818230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &702197962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1137,7 @@ GameObject:
   - component: {fileID: 1085435915}
   - component: {fileID: 1085435917}
   - component: {fileID: 1085435916}
+  - component: {fileID: 1085435918}
   m_Layer: 5
   m_Name: eye4
   m_TagString: Untagged
@@ -1167,6 +1202,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085435914}
   m_CullTransparentMesh: 1
+--- !u!114 &1085435918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085435914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &1233050860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1229,7 @@ GameObject:
   - component: {fileID: 1233050861}
   - component: {fileID: 1233050863}
   - component: {fileID: 1233050862}
+  - component: {fileID: 1233050864}
   m_Layer: 5
   m_Name: brain
   m_TagString: Untagged
@@ -1242,6 +1294,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233050860}
   m_CullTransparentMesh: 1
+--- !u!114 &1233050864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233050860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &1241320245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1321,7 @@ GameObject:
   - component: {fileID: 1241320246}
   - component: {fileID: 1241320248}
   - component: {fileID: 1241320247}
+  - component: {fileID: 1241320249}
   m_Layer: 5
   m_Name: intestine
   m_TagString: Untagged
@@ -1317,6 +1386,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241320245}
   m_CullTransparentMesh: 1
+--- !u!114 &1241320249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241320245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &1371223246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1413,7 @@ GameObject:
   - component: {fileID: 1371223247}
   - component: {fileID: 1371223249}
   - component: {fileID: 1371223248}
+  - component: {fileID: 1371223250}
   m_Layer: 5
   m_Name: spine
   m_TagString: Untagged
@@ -1392,6 +1478,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371223246}
   m_CullTransparentMesh: 1
+--- !u!114 &1371223250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371223246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!114 &1385703219 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1881580748863031913, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
@@ -1414,6 +1516,7 @@ GameObject:
   - component: {fileID: 1511590512}
   - component: {fileID: 1511590514}
   - component: {fileID: 1511590513}
+  - component: {fileID: 1511590515}
   m_Layer: 5
   m_Name: eye3
   m_TagString: Untagged
@@ -1478,6 +1581,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511590511}
   m_CullTransparentMesh: 1
+--- !u!114 &1511590515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511590511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &1557857763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,6 +1833,7 @@ GameObject:
   - component: {fileID: 1940021558}
   - component: {fileID: 1940021560}
   - component: {fileID: 1940021559}
+  - component: {fileID: 1940021561}
   m_Layer: 5
   m_Name: heart
   m_TagString: Untagged
@@ -1778,6 +1898,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940021557}
   m_CullTransparentMesh: 1
+--- !u!114 &1940021561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940021557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &2015495215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,6 +2128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3032740251e055940a4b09b13981e9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTimesPerLevel: []
   _spawnPoints:
   - _position: {x: 3.39, y: 3.52}
     _minigame: {fileID: 0}
@@ -2015,6 +2152,7 @@ GameObject:
   - component: {fileID: 2065433243}
   - component: {fileID: 2065433245}
   - component: {fileID: 2065433244}
+  - component: {fileID: 2065433246}
   m_Layer: 5
   m_Name: eye2
   m_TagString: Untagged
@@ -2079,6 +2217,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065433242}
   m_CullTransparentMesh: 1
+--- !u!114 &2065433246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065433242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53eb58983a2fee45ba90350f8b1e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShaking: 0
+  shaketime: 5
+  shakestrength: 1
+  vabrado: 2
 --- !u!1 &2122430088
 GameObject:
   m_ObjectHideFlags: 0

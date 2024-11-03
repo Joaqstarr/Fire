@@ -37,7 +37,7 @@ public class SanityManager : MonoBehaviour
         High
     }
 
-    private InsanityLevel _level;
+    public static InsanityLevel _level;
 
 
     void Start()
