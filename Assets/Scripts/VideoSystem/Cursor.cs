@@ -26,7 +26,9 @@ public class Cursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 setPos = Camera.main.ScreenToWorldPoint( Input.mousePosition);
+        
+        
+        Vector3 setPos = Camera.main.ScreenToWorldPoint(ClampToScreen(Input.mousePosition));
         setPos.z = _zPos;
         if (!_matchWithMousePos)
         {
@@ -49,6 +51,16 @@ public class Cursor : MonoBehaviour
         animator.SetBool("hover", hoverNum != 0);
     }
 
+    private Vector2 ClampToScreen(Vector2 vec)
+    {
+        Vector2 outVec = Vector2.zero;
+
+        outVec.x = Mathf.Clamp(vec.x, 0, Screen.width);
+        outVec.y = Mathf.Clamp(vec.y, 0, Screen.height);
+
+        return outVec;
+
+    }
     private Vector2 GetMousePosition()
     {
         Vector2 pos = Input.mousePosition;
