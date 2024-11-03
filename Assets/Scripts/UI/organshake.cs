@@ -31,7 +31,7 @@ public class organshake : MonoBehaviour
             {
 
 
-                transform.DOShakePosition(shaketime, shakestrength, vabrado, 80, false, true);
+                transform.DOShakePosition(shaketime, shakestrength, vabrado, 80, false, false);
             }
             yield return new WaitForSeconds(shaketime);
         }

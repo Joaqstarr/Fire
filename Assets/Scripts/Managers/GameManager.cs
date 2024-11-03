@@ -31,12 +31,14 @@ public class GameManager : MonoBehaviour
     private GameState _state;
 
     [SerializeField]
-    private CanvasGroup _mainScreenGroup; 
-
+    private CanvasGroup _mainScreenGroup;
+    
+    private StickFeed _stickFeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        _stickFeed = GetComponentInChildren<StickFeed>();
         _mainMinigameBehavior.GetComponent<VideoMarkerListener>().Subscribe(VideoEventTypes.EndVideo, EndMainMinigame);
 
         if (Instance != null)
@@ -63,12 +65,14 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public bool SendLogToFire()
+    public void SendLogToFire()
     {
-        if(_amountOfLogs <= 0)return false;
+        if(_amountOfLogs <= 0)return;
 
         _amountOfLogs--;
-        return true;
+        _fireTime += _timeAddedPerLog;
+        _stickFeed.ThrowStick();
+
     }
 
     public void PickUpSticksGame()

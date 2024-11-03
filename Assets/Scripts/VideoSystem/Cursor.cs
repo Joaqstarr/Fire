@@ -21,10 +21,15 @@ public class Cursor : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        lastMouse = Input.mousePosition;
     }
 
+    Vector2 lastMouse;
+    [SerializeField]
+    private float _mouseSpeed = 1;
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         
@@ -35,11 +40,28 @@ public class Cursor : MonoBehaviour
 
             Vector2 boundSize = _spriteRend.size;
             Vector3 newCursorPos = (boundSize * GetMousePosition()) - (boundSize / 2);
+
+
+           // newCursorPos = (Vector2)_rb.position + (MouseDelta() * _mouseSpeed);
+
             newCursorPos.z = _zPos;
             setPos = transform.parent.TransformPoint(newCursorPos);
+            /*
+            setPos = (Vector2)_rb.position + (MouseDelta() * _mouseSpeed);
 
+            
+            Vector2 localSetPos = transform.InverseTransformPoint(setPos);
+
+            float widthUnits = boundSize.x / _spriteRend.sprite.pixelsPerUnit;
+            float heightUnits = boundSize.y / _spriteRend.sprite.pixelsPerUnit;
+
+            localSetPos.x = Mathf.Clamp(localSetPos.x, -widthUnits/2, widthUnits/2);
+            localSetPos.y = Mathf.Clamp(localSetPos.y, -heightUnits / 2, heightUnits / 2);
+
+            setPos = transform.TransformPoint(localSetPos);
+            */
         }
-        
+
         _rb.MovePosition(setPos);
 
 
@@ -48,7 +70,16 @@ public class Cursor : MonoBehaviour
 
 
 
+
         animator.SetBool("hover", hoverNum != 0);
+
+        lastMouse = Input.mousePosition;
+
+    }
+
+    private Vector2 MouseDelta()
+    {
+        return (Vector2)Input.mousePosition - lastMouse;
     }
 
     private Vector2 ClampToScreen(Vector2 vec)

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c759726e65794ba7bd03f344403d52e3, type: 3}
   m_Name: Moon
   m_EditorClassIdentifier: 
-  <EventType>k__BackingField: 0
+  <EventType>k__BackingField: 1
   <InputStyle>k__BackingField: 2
   <Buttons>k__BackingField:
   - Pos: {x: 0.37, y: 0.41}
     Size: {x: 2.15, y: 2.15}
-    Image: {fileID: 0}
+    Image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

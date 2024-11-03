@@ -37,6 +37,14 @@ public class VideoBehavior : MonoBehaviour
         _videoMarkerListener.Subscribe(VideoEventTypes.StopAcceptingInput, StopAcceptingInput);
         _videoMarkerListener.Subscribe(VideoEventTypes.EndVideo, DestroyThisObject);
 
+
+        if (_canBeDestroyed)
+        {
+            Vector3 scale = transform.localScale;
+            scale *= UnityEngine.Random.Range(0.8f, 2f);
+            transform.localScale = scale;
+        }
+
     }
     
     private void OnDisable()
@@ -71,7 +79,7 @@ public class VideoBehavior : MonoBehaviour
     public void PlayVideo(string name)
     {
         if (name == null) return;
-        _animationComponent.Play(name);
+        _animationComponent.Play(name, 0, 0);
     }
 
 
