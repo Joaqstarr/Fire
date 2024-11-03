@@ -1056,3 +1056,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 5.4
+    functionName: SendEvent
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: b1639ca25c303a44f8424df04e60ec92, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -1766,7 +1766,7 @@ MonoBehaviour:
   _timeAddedPerLog: 34
   _eyeBlink: {fileID: 2015495220}
   _mainMinigameBehavior: {fileID: 1385703219}
-  _fireTime: 0
+  _fireTime: 40
   _mainScreenGroup: {fileID: 562474464}
 --- !u!114 &2028926099
 MonoBehaviour:
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTimesPerLevel:
-  - 3
+  - 19
   - 12
   - 7
   _spawnPoints:
