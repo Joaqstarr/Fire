@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c759726e65794ba7bd03f344403d52e3, type: 3}
-  m_Name: AcceptInput
+  m_Name: PressActionButton
   m_EditorClassIdentifier: 
   <EventType>k__BackingField: 1
   <InputStyle>k__BackingField: 1
