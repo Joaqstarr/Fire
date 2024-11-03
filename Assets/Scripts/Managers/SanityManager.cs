@@ -6,6 +6,11 @@ using UnityEngine;
 public class SanityManager : MonoBehaviour
 {
 
+    [SerializeField]
+    private float[] waitTimesPerLevel;
+
+
+
     [Serializable]
     struct VideoArray
     {
@@ -38,7 +43,19 @@ public class SanityManager : MonoBehaviour
     void Start()
     {
         _level = InsanityLevel.Low;   
-        PlayRandomSanityMinigame();
+        StartCoroutine(SpawnSanityMinigame());
+    }
+
+    
+
+    IEnumerator SpawnSanityMinigame()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTimesPerLevel[(int)_level]);
+            PlayRandomSanityMinigame();
+
+        }
     }
 
 

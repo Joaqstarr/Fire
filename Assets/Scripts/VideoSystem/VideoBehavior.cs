@@ -19,6 +19,8 @@ public class VideoBehavior : MonoBehaviour
     [SerializeField] private ActionButtonInput _actionButtonPrefab;
     [SerializeField] private string _playOnStart;
 
+    [SerializeField] private bool _canBeDestroyed = true;
+
     private void Awake()
     {
         _player = GetComponent<VideoPlayer>();
@@ -33,13 +35,23 @@ public class VideoBehavior : MonoBehaviour
         _videoMarkerListener.Subscribe(VideoEventTypes.Pause, PauseVideo);
         _videoMarkerListener.Subscribe(VideoEventTypes.AcceptInput, StartAcceptingInput);
         _videoMarkerListener.Subscribe(VideoEventTypes.StopAcceptingInput, StopAcceptingInput);
-    }
+        _videoMarkerListener.Subscribe(VideoEventTypes.EndVideo, DestroyThisObject);
 
+    }
+    
     private void OnDisable()
     {
         _videoMarkerListener.Unsubscribe(VideoEventTypes.Pause, PauseVideo);
         _videoMarkerListener.Unsubscribe(VideoEventTypes.AcceptInput, StartAcceptingInput);
         _videoMarkerListener.Unsubscribe(VideoEventTypes.StopAcceptingInput, StopAcceptingInput);
+        _videoMarkerListener.Unsubscribe(VideoEventTypes.EndVideo, DestroyThisObject);
+
+    }
+
+    private void DestroyThisObject(VideoMarkerData data)
+    {
+        if (!_canBeDestroyed) return;
+        Destroy(gameObject);
     }
 
     private void Update()
