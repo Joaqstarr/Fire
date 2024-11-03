@@ -1250,8 +1250,7 @@ MonoBehaviour:
     _minigame: {fileID: 0}
   _minigames:
   - _minigames:
-    - {fileID: 1154627343331223, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
-    - {fileID: 3754599114212986990, guid: 2fa7a2dffa9cb524da6046620dc9a674, type: 3}
+    - {fileID: 7487466472891503784, guid: 1f5ab02db3624ac4d8e251becadd4155, type: 3}
   - _minigames: []
   - _minigames: []
 --- !u!1 &2122430088
