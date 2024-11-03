@@ -15,9 +15,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EyeBlink _eyeBlink;
     [SerializeField] private VideoBehavior _mainMinigameBehavior;
 
-    private int _amountOfLogs = 0;
-    private float _fireTime = 0;
     
+    private int _amountOfLogs = 0;
+    [SerializeField]
+    private float _fireTime = 0;
+
+    public static GameManager Instance;
 
     public enum GameState
     {
@@ -35,6 +38,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _mainMinigameBehavior.GetComponent<VideoMarkerListener>().Subscribe(VideoEventTypes.EndVideo, EndMainMinigame);
+
+        if (Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -112,6 +123,11 @@ public class GameManager : MonoBehaviour
             EnableMainScreen();
         }
         
+    }
+
+    public float GetFireTime()
+    {
+        return _fireTime;
     }
 }
 
