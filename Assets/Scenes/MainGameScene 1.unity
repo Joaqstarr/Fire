@@ -420,9 +420,17 @@ PrefabInstance:
       value: -385575691
       objectReference: {fileID: 0}
     - target: {fileID: 1356511659344510619, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
+      propertyPath: m_Size.x
+      value: 11.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356511659344510619, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
+      propertyPath: m_Size.y
+      value: 9.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356511659344510619, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d0148ad68cb883549bbf20b9f400f317, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1356511659344510619, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -430,6 +438,14 @@ PrefabInstance:
     - target: {fileID: 1356511659344510619, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
       propertyPath: m_SortingLayerID
       value: -131617637
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356511659344510619, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881580748863031913, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
+      propertyPath: _canBeDestroyed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3246969255561355970, guid: ca574659ccd0f44468f21f8ea5e3c792, type: 3}
       propertyPath: _matchWithMousePos
@@ -1221,7 +1237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3032740251e055940a4b09b13981e9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTimesPerLevel: []
+  waitTimesPerLevel:
+  - 3
+  - 3
+  - 3
   _spawnPoints:
   - _position: {x: 3.39, y: 3.52}
     _minigame: {fileID: 0}
@@ -1232,6 +1251,7 @@ MonoBehaviour:
   _minigames:
   - _minigames:
     - {fileID: 1154627343331223, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+    - {fileID: 3754599114212986990, guid: 2fa7a2dffa9cb524da6046620dc9a674, type: 3}
   - _minigames: []
   - _minigames: []
 --- !u!1 &2122430088

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6518502242988343519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1154627343331223, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: _playOnStart
+      value: MovieClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154627343331223, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: _canBeDestroyed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 633848330357824357, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 633848330357824357, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6004429
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880487988914198327, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746717929400737407, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
+      propertyPath: m_Name
+      value: VHS2 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 158fe14c555f4fd4fab35da455a478d0, type: 3}
