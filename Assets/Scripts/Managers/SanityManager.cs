@@ -11,6 +11,11 @@ public class SanityManager : MonoBehaviour
 
 
 
+    private float _sanityTimer;
+
+    [SerializeField]
+    private float[] _sanityTimes;
+
     [Serializable]
     struct VideoArray
     {
@@ -32,9 +37,11 @@ public class SanityManager : MonoBehaviour
 
     public enum InsanityLevel
     {
+        None,
         Low,
         Medium, 
-        High
+        High,
+        NUM
     }
 
     public static InsanityLevel _level;
@@ -42,11 +49,25 @@ public class SanityManager : MonoBehaviour
 
     void Start()
     {
-        _level = InsanityLevel.Low;   
+        _level = InsanityLevel.None;
+
+        _sanityTimer = _sanityTimes[(int)_level];
         StartCoroutine(SpawnSanityMinigame());
     }
 
-    
+    private void Update()
+    {
+        _sanityTimer -= Time.deltaTime;
+        if (_sanityTimer < 0 && !(_level >= InsanityLevel.High))
+        {
+            _level++;
+            if ((int)_level < _sanityTimes.Length) {
+                _sanityTimer = _sanityTimes[(int)_level];
+            }
+
+        }
+
+    }
 
     IEnumerator SpawnSanityMinigame()
     {
@@ -61,8 +82,11 @@ public class SanityManager : MonoBehaviour
 
     public void PlayRandomSanityMinigame()
     {
-        int ranLevel = UnityEngine.Random.Range(0, (int)_level);
+
+        int ranLevel = UnityEngine.Random.Range(0, (int)_level + 1);
         int ranMinigame = UnityEngine.Random.Range(0, _minigames[ranLevel]._minigames.Length);
+
+        if (_minigames[ranLevel]._minigames.Length <= 0) return;
 
         VideoBehavior vidToSpawn = _minigames[ranLevel]._minigames[ranMinigame];
         
@@ -86,6 +110,8 @@ public class SanityManager : MonoBehaviour
                 return;
             }
         }
+
+        Destroy(spawnedGame.gameObject);
 
     }
 
