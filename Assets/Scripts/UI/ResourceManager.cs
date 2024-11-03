@@ -17,12 +17,12 @@ public class ResourceManager : MonoBehaviour
     private AudioSource _audioSource;
 
     public UnityEvent _onMaxed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
+    public float GetRealInterp()
+    {
+        return Mathf.Clamp01(_amount/_maxAmount);
+    }
     public void ResetToZero()
     {
         _amount = 0;
