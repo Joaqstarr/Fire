@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c759726e65794ba7bd03f344403d52e3, type: 3}
   m_Name: Minion
   m_EditorClassIdentifier: 
-  <EventType>k__BackingField: 0
-  <InputStyle>k__BackingField: 0
-  <Buttons>k__BackingField: []
+  <EventType>k__BackingField: 1
+  <InputStyle>k__BackingField: 2
+  <Buttons>k__BackingField:
+  - Pos: {x: -2.03, y: 1.43}
+    Size: {x: 1.03, y: 1.34}
+    Image: {fileID: 0}

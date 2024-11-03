@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c759726e65794ba7bd03f344403d52e3, type: 3}
-  m_Name: VHS2
+  m_Name: DoorKey
   m_EditorClassIdentifier: 
-  <EventType>k__BackingField: 1
-  <InputStyle>k__BackingField: 2
-  <Buttons>k__BackingField:
-  - Pos: {x: -1.86, y: 0.27}
-    Size: {x: 8.15, y: 7.16}
-    Image: {fileID: 0}
+  <EventType>k__BackingField: 0
+  <InputStyle>k__BackingField: 0
+  <Buttons>k__BackingField: []
