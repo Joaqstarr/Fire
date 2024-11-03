@@ -21,10 +21,11 @@ namespace VideoSystem
 
         private VideoEvent[] _eventsArray;
 
-
+        private AudioSource _audioSource;
         private void Awake()
         {
             _eventsArray = new VideoEvent[(int)VideoEventTypes.Max];
+            _audioSource = GetComponent<AudioSource>();
         }
 
         public void SendEvent(VideoMarkerData data)
@@ -51,6 +52,11 @@ namespace VideoSystem
             eventToSubTo -= method;
 
             _eventsArray[(int)type] = eventToSubTo;
+        }
+
+        public void PlaySound(AudioClip audioClip)
+        {
+            _audioSource.PlayOneShot(audioClip);
         }
 
     }
