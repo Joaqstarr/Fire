@@ -1629,7 +1629,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2911,13 +2911,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTimesPerLevel:
   - 4
-  - 5
+  - 14
   - 12
   - 7
   _sanityTimes:
-  - 20
-  - 24
-  - 18
+  - 25
+  - 50
+  - 55
   _spawnPoints:
   - _position: {x: 3.39, y: 2.48}
     _minigame: {fileID: 0}
