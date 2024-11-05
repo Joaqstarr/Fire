@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _amount: 0
-  _maxAmount: 50
+  _maxAmount: 70
   _curve:
     serializedVersion: 2
     m_Curve:
@@ -400,7 +400,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _canvasGroup: {fileID: 141160530}
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: 141160533}
   _onMaxed:
     m_PersistentCalls:
       m_Calls: []
