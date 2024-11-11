@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,8 +18,22 @@ public class ResourceManager : MonoBehaviour
     private AudioSource _audioSource;
 
     public UnityEvent _onMaxed;
-    
 
+    private bool _isStarted = false;
+    private void Start()
+    {
+        GameManager.Instance.OnFireStarted += StartTick;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnFireStarted -= StartTick;
+    }
+
+    private void StartTick()
+    {
+        _isStarted = true;
+    }
     public float GetRealInterp()
     {
         return Mathf.Clamp01(_amount/_maxAmount);
@@ -38,6 +53,7 @@ public class ResourceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!_isStarted)return;
         _amount += Time.deltaTime;
         float interp = _curve.Evaluate(_amount / _maxAmount);
         if(_audioSource != null)

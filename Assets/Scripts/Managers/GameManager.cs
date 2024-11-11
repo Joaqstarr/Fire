@@ -8,7 +8,9 @@ using System;
 public class GameManager : MonoBehaviour
 {
 
+    public delegate void FireDel();
 
+    public FireDel OnFireStarted;
 
     [Range(1f, 300f)]
     [SerializeField] private float _timeAddedPerLog;
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
     
     private int _amountOfLogs = 0;
     private int _amountOfAcorns = 0;
-
+    private bool _hasStarted = false;
     [SerializeField]
     private float _fireTime = 0;
 
@@ -37,12 +39,8 @@ public class GameManager : MonoBehaviour
     
     private StickFeed _stickFeed;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        _stickFeed = GetComponentInChildren<StickFeed>();
-        _mainMinigameBehavior.GetComponent<VideoMarkerListener>().Subscribe(VideoEventTypes.EndVideo, EndMainMinigame);
-
         if (Instance != null)
         {
             Destroy(this);
@@ -50,6 +48,16 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+        
+        _hasStarted = false;
+    }
+
+    void Start()
+    {
+        _stickFeed = GetComponentInChildren<StickFeed>();
+        _mainMinigameBehavior.GetComponent<VideoMarkerListener>().Subscribe(VideoEventTypes.EndVideo, EndMainMinigame);
+
+  
     }
 
     // Update is called once per frame
@@ -64,8 +72,9 @@ public class GameManager : MonoBehaviour
     public void AddLogs(int amt)
     {
         _amountOfLogs += amt;
-        
+
     }
+    
     public void AddAcorns(int amt)
     {
         _amountOfAcorns += amt;
@@ -79,6 +88,13 @@ public class GameManager : MonoBehaviour
         _amountOfLogs--;
         _fireTime += _timeAddedPerLog;
         _stickFeed.ThrowStick();
+        
+        if (!_hasStarted)
+        {
+            _hasStarted = true;
+            
+            OnFireStarted?.Invoke();
+        }
 
     }
 

@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _insanityMusic: {fileID: 1186611989}
-  _maxInsanityVol: 0.1
+  _maxInsanityVol: 0.3
 --- !u!82 &1186611989
 AudioSource:
   m_ObjectHideFlags: 0
